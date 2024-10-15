@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "services": "Serviços",
+    "contact": "Contato",
+    "signIn": "Entrar",
+    "signUp": "Registrar",
+    "logout": "Sair"
+  },
+  "footer": {
+    "contact": "Contato",
+    "address": "Endereço",
+    "phone": "Telefone",
+    "email": "Email",
+    "newsletter": "Newsletter",
+    "newsletterDescription": "Inscreva-se para receber novidades e atualizações.",
+    "subscribe": "Inscrever",
+    "socialMedia": "Redes Sociais",
+    "allRightsReserved": "Todos os direitos reservados."
+  },
+  "landing": {
+    "title": "Automação de Inteligência e Inovação para o Futuro",
+    "subtitle": "",
+    "cta": "Explorar",
+    "ourServices": "Nossos Serviços"
+  },
+  "about": {
+    "title": "Sobre Nós"
+  }
+}
