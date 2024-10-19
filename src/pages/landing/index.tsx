@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-light-background dark:bg-dark-background text-light-primary-900 dark:text-dark-primary-100">
+    <div className="min-h-screen bg-light-background dark:bg-dark-background text-light-primary-900 dark:text-dark-primary-100 ">
       {/* Header */}
       <header className="p-6 bg-light-primary-500 dark:bg-dark-primary-500">
         <div className="container mx-auto">
