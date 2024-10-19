@@ -1,114 +1,58 @@
-import Image from "next/image";
-import localFont from "next/font/local";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import React from "react";
 
 export default function Home() {
   return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/pages/index.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-light-background dark:bg-dark-background text-light-primary-900 dark:text-dark-primary-100">
+      {/* Header */}
+      <header className="p-6 bg-light-primary-500 dark:bg-dark-primary-500">
+        <div className="container mx-auto">
+          <h1 className="text-5xl font-bold">BiriView</h1>
+          <p className="mt-3 text-xl">
+            Explore o comércio e a história da cidade de Birigui de forma
+            interativa.
+          </p>
         </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="container mx-auto p-6">
+        {/* Section 1: História da Cidade */}
+        <section className="my-12">
+          <h2 className="text-3xl font-semibold mb-4">História de Birigui</h2>
+          <p className="text-lg">
+            Birigui, conhecida por seu comércio e rica história, possui diversos
+            marcos importantes para o desenvolvimento do estado de São Paulo.
+            Conheça as histórias, monumentos e esculturas que fazem parte da
+            cultura local.
+          </p>
+        </section>
+
+        {/* Section 2: Comércio Local */}
+        <section className="my-12">
+          <h2 className="text-3xl font-semibold mb-4">Comércio Local</h2>
+          <p className="text-lg">
+            O comércio local de Birigui é famoso pela sua inovação,
+            especialmente na indústria calçadista. Explore as lojas e conheça os
+            produtos que fazem de Birigui um polo comercial de destaque.
+          </p>
+        </section>
+
+        {/* Section 3: Cultura e Eventos */}
+        <section className="my-12">
+          <h2 className="text-3xl font-semibold mb-4">Cultura e Eventos</h2>
+          <p className="text-lg">
+            A cidade oferece uma ampla gama de eventos culturais ao longo do
+            ano. Fique por dentro das celebrações e participe das iniciativas
+            que promovem a arte e a cultura de Birigui.
+          </p>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Footer */}
+      <footer className="p-6 bg-light-secondary dark:bg-dark-secondary text-light-accent dark:text-dark-accent">
+        <div className="container mx-auto">
+          <p>&copy; 2024 BiriView. Todos os direitos reservados.</p>
+        </div>
       </footer>
     </div>
   );
