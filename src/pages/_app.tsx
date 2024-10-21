@@ -10,20 +10,10 @@ interface AppContentProps {
 
 export default function App({ Component, pageProps }: AppContentProps) {
   const [isClient, setIsClient] = useState(false);
-  // if (typeof window !== "undefined") setIsClient(true);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
-
-  // useEffect(() => {
-  //   if (isClient) {
-  //     // eslint-disable-next-line global-require
-  //     // require("@/lib/init");
-
-  //   }
-  // }
-  // , [isClient]);
 
   if (!isClient) {
     return (
