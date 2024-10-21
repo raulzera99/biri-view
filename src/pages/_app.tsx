@@ -9,7 +9,7 @@ interface AppContentProps {
 }
 
 export default function App({ Component, pageProps }: AppContentProps) {
-  const [isClient, setIsClient] = useState(true);
+  const [isClient, setIsClient] = useState(false);
   // if (typeof window !== "undefined") setIsClient(true);
 
   useEffect(() => {
