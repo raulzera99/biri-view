@@ -49,7 +49,6 @@ export const Carousel: React.FC<CarouselProps> = ({ technologies, timing }) => {
     );
   };
 
-  // Autoplay functionality
   useEffect(() => {
     const interval = setInterval(
       () => {
@@ -59,14 +58,6 @@ export const Carousel: React.FC<CarouselProps> = ({ technologies, timing }) => {
     );
     return () => clearInterval(interval);
   }, [activeIndex, handleNext, timing]);
-
-  // Get the indices for previous and next icons
-  // const getPrevIndex = () =>
-  //     activeIndex === 0 ? technologies.length - 1 : activeIndex - 1;
-  // const getNextIndex = () =>
-  //     activeIndex === technologies.length - 1 ? 0 : activeIndex + 1;
-
-  // Define quais itens serão renderizados com base no número de itens visíveis
   const getVisibleItems = () => {
     const items = [];
     for (let i = 0; i < visibleItems; i++) {

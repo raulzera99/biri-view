@@ -46,20 +46,20 @@ export const Navbar: React.FC = () => {
             />
           </Link>
         </div>
-        <Link href="/" passHref>
+        {/*         <Link href="/" passHref>
           <Button
             variant={"ghost"}
-            className="text-2xl font-bold text-light-primary dark:text-white hidden lg:flex md:flex items-center"
+            className="text-2xl font-bold text-black dark:text-white hidden lg:flex md:flex items-center"
             style={{ cursor: "pointer" }}
           >
             BiriView
           </Button>
-        </Link>
+        </Link> */}
 
         {/* Menu de navegação - visível em telas grandes */}
         <div className="hidden lg:flex items-center py-5">
           <Link href="/about" passHref>
-            <span className="text-light-primary dark:text-white px-4">
+            <span className="text-black dark:text-white px-4">
               Sobre
             </span>
           </Link>
@@ -69,7 +69,7 @@ export const Navbar: React.FC = () => {
           <div className="relative px-4">
             <button
               onClick={openServicesMenu}
-              className="text-light-primary dark:text-white px-4 flex items-center"
+              className="text-black dark:text-white px-4 flex items-center"
               style={{
                 border: "none",
                 background: "none",
@@ -105,7 +105,7 @@ export const Navbar: React.FC = () => {
 
           <Separator orientation="vertical" size="2px" length="24px" />
           <Link href="#contact" passHref>
-            <span className="text-light-primary dark:text-white px-4">
+            <span className="text-black dark:text-white px-4">
               Contato
             </span>
           </Link>
@@ -116,7 +116,7 @@ export const Navbar: React.FC = () => {
           <PopoverTrigger>
             <Button
               variant="ghost"
-              className="text-light-primary dark:text-white"
+              className="text-black dark:text-white"
             >
               {isMenuOpen ? (
                 <XMarkIcon className="w-6 h-6" />
@@ -134,7 +134,7 @@ export const Navbar: React.FC = () => {
             {/* Submenu suspenso - navegação para telas pequenas */}
             <div className="lg:hidden flex flex-col p-4 py-4">
               <Link href="/about" passHref>
-                <span className="text-light-primary dark:text-white px-4 py-2">
+                <span className="text-black dark:text-white px-4 py-2">
                   Sobre
                 </span>
               </Link>
@@ -147,7 +147,7 @@ export const Navbar: React.FC = () => {
               <div className="relative px-4 pb-2">
                 <button
                   onClick={openServicesMenuHamburguer}
-                  className="text-light-primary dark:text-white px-4 flex items-center"
+                  className="text-black dark:text-white px-4 flex items-center"
                   style={{
                     border: "none",
                     background: "none",
