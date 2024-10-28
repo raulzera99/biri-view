@@ -109,13 +109,13 @@ export default function Home() {
               Indicação Geográfica de Birigui
             </h2>
           </div>
-          <div className="flex items-center justify-center">
+          <div className="flex flex-col md:flex-row items-center justify-center">
             <Image
               src="/assets/imgs/logo-ig-birigui.png"
               alt="Indicação Geográfica de Birigui"
               width={220}
               height={220}
-              className="mr-6"
+              className="mb-6 md:mb-0 md:mr-6"
             />
             <div>
               <p className="text-lg text-gray-800 dark:text-gray-300 mb-4">
