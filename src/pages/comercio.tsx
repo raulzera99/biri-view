@@ -1,6 +1,9 @@
 // pages/comercio.tsx
 import React from "react";
 import Link from "next/link";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Image from "next/image";
 
 const commerceData = [
   {
@@ -94,6 +97,48 @@ export default function Comercio() {
           infantil.
         </p>
 
+        {/* Sessão com Carrossel de Produtos */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-semibold mb-6 text-center">
+            Destaques da Loja
+          </h2>
+          <Carousel
+            showArrows={true}
+            infiniteLoop={true}
+            showThumbs={false}
+            showStatus={false}
+            autoPlay={true}
+            interval={3000}
+            className="max-w-4xl mx-auto"
+          >
+            {commerceData[2].items.map((product, index) => (
+              <div key={index} className="text-center">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  width={256}
+                  height={256}
+                  className="mx-auto h-64 object-contain"
+                />
+                <p className="legend">
+                  <strong>{product.name}</strong> - {product.description}
+                </p>
+              </div>
+            ))}
+          </Carousel>
+          <div className="text-center mt-8">
+            <a
+              href="https://www.pampili.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="px-6 py-3 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600 transition duration-200">
+                Visitar Loja Online
+              </button>
+            </a>
+          </div>
+        </section>
+
         {/* Seções de Comércio */}
         {commerceData.map((section, sectionIndex) => (
           <section key={sectionIndex} className="mb-16">
@@ -107,9 +152,11 @@ export default function Comercio() {
                   className="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden transition duration-300 transform hover:scale-105 hover:shadow-2xl cursor-pointer"
                   onClick={() => window.open(item.url, "_blank")}
                 >
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.name}
+                    width={256}
+                    height={192}
                     className="w-full h-48 object-contain p-4"
                   />
                   <div className="p-6">

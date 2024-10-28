@@ -8,6 +8,7 @@ import { Popover, PopoverTrigger, PopoverContent } from "@/components/popover";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "../button";
+import { FaShoppingCart } from "react-icons/fa";
 
 export const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -59,9 +60,7 @@ export const Navbar: React.FC = () => {
         {/* Menu de navegação - visível em telas grandes */}
         <div className="hidden lg:flex items-center py-5">
           <Link href="/about" passHref>
-            <span className="text-black dark:text-white px-4">
-              Sobre
-            </span>
+            <span className="text-black dark:text-white px-4">Sobre</span>
           </Link>
           <Separator orientation="vertical" size="2px" length="24px" />
 
@@ -105,8 +104,13 @@ export const Navbar: React.FC = () => {
 
           <Separator orientation="vertical" size="2px" length="24px" />
           <Link href="#contact" passHref>
-            <span className="text-black dark:text-white px-4">
-              Contato
+            <span className="text-black dark:text-white px-4">Contato</span>
+          </Link>
+          <Separator orientation="vertical" size="2px" length="24px" />
+          <Link href="/shop" passHref>
+            <span className="text-black dark:text-white px-4 flex items-center">
+              Loja
+              <FaShoppingCart size={20} className="ml-2" />
             </span>
           </Link>
         </div>
@@ -114,10 +118,7 @@ export const Navbar: React.FC = () => {
         {/* Menu hambúrguer - visível em todas as telas */}
         <Popover>
           <PopoverTrigger>
-            <Button
-              variant="ghost"
-              className="text-black dark:text-white"
-            >
+            <Button variant="ghost" className="text-black dark:text-white">
               {isMenuOpen ? (
                 <XMarkIcon className="w-6 h-6" />
               ) : (
