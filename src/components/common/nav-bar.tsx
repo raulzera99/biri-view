@@ -59,7 +59,7 @@ export const Navbar: React.FC = () => {
 
         {/* Menu de navegação - visível em telas grandes */}
         <div className="hidden lg:flex items-center py-5">
-          <Link href="/about" passHref>
+          <Link href="/" passHref>
             <span className="text-black dark:text-white px-4">Sobre</span>
           </Link>
           <Separator orientation="vertical" size="2px" length="24px" />
@@ -90,13 +90,23 @@ export const Navbar: React.FC = () => {
             >
               {/* Links para serviços */}
               <MenuItem onClick={closeServicesMenu}>
-                <Link href="/services/lojas-de-calcados" passHref>
+                <Link href="/shop" passHref>
                   <span>Lojas de Calçados</span>
                 </Link>
               </MenuItem>
               <MenuItem onClick={closeServicesMenu}>
-                <Link href="/services/historia-de-birigui" passHref>
+                <Link href="/historia" passHref>
                   <span>História de Birigui</span>
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={closeServicesMenu}>
+                <Link href="/comercio" passHref>
+                  <span>Comércio de Birigui</span>
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={closeServicesMenu}>
+                <Link href="/cultura" passHref>
+                  <span>Cultura de Birigui</span>
                 </Link>
               </MenuItem>
             </Menu>
