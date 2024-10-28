@@ -1,5 +1,6 @@
 // pages/shopping.tsx
 import React, { useState } from "react";
+import Image from "next/image";
 
 const mockShoes = [
   {
@@ -136,9 +137,11 @@ export default function Shopping() {
               key={shoe.id}
               className="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden transition transform hover:scale-105 hover:shadow-2xl"
             >
-              <img
+              <Image
                 src={shoe.image}
                 alt={shoe.name}
+                width={500}
+                height={500}
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
