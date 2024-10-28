@@ -59,21 +59,21 @@ const commerceData = [
         name: "Tênis Infantil Klin",
         description:
           "Tênis esportivo para crianças, leve e confortável, ideal para atividades ao ar livre.",
-        image: "/assets/imgs/logo-klin.png",
+        image: "/assets/imgs/tenis-klin.webp",
         url: "https://www.klin.com.br",
       },
       {
         name: "Sandália Pampili",
         description:
           "Sandália elegante e confortável, perfeita para ocasiões casuais e formais.",
-        image: "/assets/imgs/logo-pampili.png",
+        image: "/assets/imgs/sandalia-pampili.jpg",
         url: "https://www.pampili.com.br",
       },
       {
-        name: "Chinelo Dedinho do Pé",
+        name: "Tenis Dedinho do Pé",
         description:
-          "Chinelo leve e durável, feito com materiais recicláveis e design anatômico.",
-        image: "/assets/imgs/logo-dedinho.webp",
+          "Tênis Infantil Meninos Calce Fácil. Confortável feito com materiais de primeira qualidade.",
+        image: "/assets/imgs/tenis-dedinhonope.webp",
         url: "https://www.dedinho.com.br",
       },
     ],
