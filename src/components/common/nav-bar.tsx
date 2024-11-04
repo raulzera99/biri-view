@@ -113,7 +113,7 @@ export const Navbar: React.FC = () => {
           </div>
 
           <Separator orientation="vertical" size="2px" length="24px" />
-          <Link href="#contact" passHref>
+          <Link href="/contact" passHref>
             <span className="text-black dark:text-white px-4">Contato</span>
           </Link>
           <Separator orientation="vertical" size="2px" length="24px" />
@@ -122,6 +122,10 @@ export const Navbar: React.FC = () => {
               Loja
               <FaShoppingCart size={20} className="ml-2" />
             </span>
+          </Link>
+          <Separator orientation="vertical" size="2px" length="24px" />
+          <Link href="https://museubirigui.com.br/" passHref target="blank">
+            <span className="text-black dark:text-white px-4">Museu do Calçado</span>
           </Link>
         </div>
 
