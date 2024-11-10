@@ -9,9 +9,7 @@ export default function Historia() {
       <div className="container mx-auto px-6 py-12">
         {/* Cabeçalho */}
         <header className="mb-12 text-center">
-          <h1 className="text-5xl font-extrabold mb-4">
-            História de Birigui
-          </h1>
+          <h1 className="text-5xl font-extrabold mb-4">História de Birigui</h1>
           <p className="text-lg md:text-xl max-w-3xl mx-auto">
             Birigui é uma cidade rica em cultura e história. Conhecida como a
             Capital do Calçado Infantil, sua trajetória é marcada por
@@ -101,6 +99,12 @@ export default function Historia() {
                 title: "Calçando com Arte – 2023",
                 description:
                   "Este monumento expressa gratidão a todos que contribuem para o desenvolvimento econômico e social da cidade, levando o nome de Birigui aos quatro cantos do mundo.",
+              },
+              {
+                src: "/assets/imgs/indicacao-procedencia.jpg",
+                title: "Indicação de Procedência do Calçado Infantil – 2024",
+                description:
+                  "Este monumento celebra a conquista da Indicação Geográfica de Birigui, reconhecendo a cidade como a Capital do Calçado Infantil no Brasil.",
               },
             ].map((monumento, index) => (
               <div

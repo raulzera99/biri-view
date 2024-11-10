@@ -2,10 +2,14 @@
 import { Carousel } from "@/components/carousel";
 import React from "react";
 import Image from "next/image";
-import Link from "next/link"; // Importar Link do Next.js
+import Link from "next/link";
 import HistoryEduIcon from "@mui/icons-material/HistoryEdu";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import TheaterComedyIcon from "@mui/icons-material/TheaterComedy";
+
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { motion } from "framer-motion";
 
 export const automationTechnologies = [
   {
@@ -77,14 +81,41 @@ export const automationTechnologies = [
 ];
 
 export default function Home() {
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const scaleUp = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: { scale: 1, opacity: 1, transition: { duration: 2 } },
+  };
+
   return (
     <div className="min-h-screen bg-light-background dark:bg-dark-background text-light-primary-900 dark:text-dark-primary-100">
       {/* Header */}
-      <header
+      <motion.header
         className="relative p-6 bg-cover bg-center text-white h-96 flex items-center justify-center"
         style={{
           backgroundImage: `url('/assets/imgs/image-home.png')`,
         }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 container mx-auto text-center">
@@ -94,7 +125,7 @@ export default function Home() {
             interativa.
           </p>
         </div>
-      </header>
+      </motion.header>
 
       <div className="py-12">
         <Carousel technologies={automationTechnologies} />
@@ -103,13 +134,21 @@ export default function Home() {
       {/* Main Content */}
       <main className="container mx-auto px-6 pb-6">
         {/* Section: Indicação Geográfica de Birigui */}
-        <section className="my-16 p-8 bg-blue-50 dark:bg-gray-700 rounded-lg shadow-lg">
-          <div className="pb-5">
+        <motion.section
+          className="my-16 p-8 bg-blue-50 dark:bg-gray-700 rounded-lg shadow-lg"
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+        >
+          <motion.div className="pb-5" variants={fadeInUp}>
             <h2 className="text-4xl font-bold mb-4 text-center">
               Indicação Geográfica de Birigui
             </h2>
-          </div>
-          <div className="flex flex-col md:flex-row items-center justify-center">
+          </motion.div>
+          <motion.div
+            className="flex flex-col md:flex-row items-center justify-center"
+            variants={fadeInUp}
+          >
             <Image
               src="/assets/imgs/logo-ig-birigui.png"
               alt="Indicação Geográfica de Birigui"
@@ -132,12 +171,18 @@ export default function Home() {
                 local.
               </p>
             </div>
-          </div>
-        </section>
+          </motion.div>
+        </motion.section>
         {/* Card Section: História da Cidade */}
         <Link href="/historia">
-          <div className="my-12 p-6 rounded-lg bg-white dark:bg-gray-800 shadow-lg transition duration-300 transform hover:scale-105 hover:shadow-2xl cursor-pointer">
-            <div className="flex items-center">
+          <motion.div
+            className="my-12 p-6 rounded-lg bg-white dark:bg-gray-800 shadow-lg transition duration-300 transform hover:scale-105 hover:shadow-2xl cursor-pointer animate-pulse"
+            whileHover={{ scale: 1.05 }}
+            initial="hidden"
+            animate="visible"
+            variants={scaleUp}
+          >
+            <div className="flex items-center ">
               <HistoryEduIcon fontSize="large" className="mr-4" />
               <div>
                 <h2 className="text-3xl font-semibold text-gray-900 dark:text-gray-100">
@@ -149,12 +194,17 @@ export default function Home() {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </Link>
-
         {/* Card Section: Comércio Local */}
         <Link href="/comercio">
-          <div className="my-12 p-6 rounded-lg bg-white dark:bg-gray-800 shadow-lg transition duration-300 transform hover:scale-105 hover:shadow-2xl cursor-pointer">
+          <motion.div
+            className="my-12 p-6 rounded-lg bg-white dark:bg-gray-800 shadow-lg transition duration-300 transform hover:scale-105 hover:shadow-2xl cursor-pointer animate-pulse"
+            whileHover={{ scale: 1.05 }}
+            initial="hidden"
+            animate="visible"
+            variants={scaleUp}
+          >
             <div className="flex items-center">
               <StorefrontIcon fontSize="large" className="mr-4" />
               <div>
@@ -167,12 +217,15 @@ export default function Home() {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </Link>
-
         {/* Card Section: Cultura e Eventos */}
         <Link href="/cultura">
-          <div className="my-12 p-6 rounded-lg bg-white dark:bg-gray-800 shadow-lg transition duration-300 transform hover:scale-105 hover:shadow-2xl cursor-pointer">
+          <motion.div
+            className="my-12 p-6 rounded-lg bg-white dark:bg-gray-800 shadow-lg transition duration-300 transform hover:scale-105 hover:shadow-2xl cursor-pointer animate-pulse"
+            // whileHover={{ scale: 1.05 }}
+            variants={scaleUp}
+          >
             <div className="flex items-center">
               <TheaterComedyIcon fontSize="large" className="mr-4" />
               <div>
@@ -185,8 +238,291 @@ export default function Home() {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </Link>
+        {/* Section: Sobre o Projeto */}
+        <motion.section
+          className="my-16 p-8 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-gray-700 dark:to-gray-800 rounded-lg shadow-xl"
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+        >
+          <motion.div className="pb-5 text-center" variants={fadeInUp}>
+            <h2 className="text-4xl font-bold mb-4 text-center text-gray-900 dark:text-gray-100">
+              Sobre o Projeto
+            </h2>
+            <p className="text-lg text-gray-800 dark:text-gray-300">
+              Nossa missão é conectar moradores e turistas à riqueza cultural e
+              comercial de Birigui, valorizando suas tradições e produtos
+              únicos.
+            </p>
+          </motion.div>
+          <motion.div
+            className="flex flex-col md:flex-row items-center justify-center"
+            variants={fadeInUp}
+          >
+            <Image
+              src="/assets/imgs/logo.png"
+              alt="BiriView Logo"
+              width={200}
+              height={200}
+              className="mb-6 md:mb-0 md:mr-6 rounded-full border-4 border-blue-500"
+            />
+            <div>
+              <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
+                BiriView é uma plataforma que visa promover o comércio, a
+                cultura e a identidade de Birigui através de experiências
+                digitais. Conectamos o público aos tesouros escondidos da
+                cidade, desde suas lojas tradicionais até histórias de moradores
+                locais.
+              </p>
+            </div>
+          </motion.div>
+          <motion.div
+            className="mt-8 grid md:grid-cols-2 gap-4 text-center"
+            variants={fadeInUp}
+          >
+            <div className="bg-white dark:bg-gray-600 p-6 rounded-lg shadow-lg">
+              <h3 className="text-2xl font-bold text-blue-600 dark:text-blue-300">
+                Missão
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300">
+                Inspirar a valorização de Birigui, proporcionando uma
+                experiência única que conecta cultura, história e inovação.
+              </p>
+            </div>
+            <div className="bg-white dark:bg-gray-600 p-6 rounded-lg shadow-lg">
+              <h3 className="text-2xl font-bold text-blue-600 dark:text-blue-300">
+                Visão
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300">
+                Tornar Birigui uma referência cultural e comercial digitalmente
+                interativa, fortalecendo sua identidade no Brasil e no mundo.
+              </p>
+            </div>
+          </motion.div>
+        </motion.section>
+        {/* Section: Desenvolvedores */}
+        <motion.section
+          className="my-16 p-8 bg-gradient-to-r from-blue-100 via-indigo-100 to-blue-200 dark:from-gray-700 dark:to-gray-800 rounded-xl shadow-2xl"
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+        >
+          <motion.div className="pb-8 text-center" variants={fadeInUp}>
+            <h2 className="text-4xl font-extrabold text-gray-900 dark:text-gray-100 tracking-tight">
+              Desenvolvedores
+            </h2>
+            <p className="mt-2 text-lg text-gray-700 dark:text-gray-300">
+              Conheça os talentos por trás do projeto
+            </p>
+          </motion.div>
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-12"
+            variants={fadeInUp}
+          >
+            {/* Desenvolvedor: Raul Dantas */}
+            <motion.div
+              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105"
+              whileHover={{ translateY: -10 }}
+            >
+              <div className="flex items-center space-x-4">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-blue-500">
+                  <Image
+                    src="/assets/imgs/raul_dantas.png"
+                    alt="Raul Dantas"
+                    layout="fill"
+                    objectFit="cover"
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold text-blue-600 dark:text-blue-300">
+                    Raul Dantas
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    Desenvolvedor Full Stack
+                  </p>
+                </div>
+              </div>
+              <p className="mt-4 text-gray-700 dark:text-gray-300">
+                Apaixonado por tecnologia e inovação, Raul atua na área de
+                desenvolvimento de software desde 2020, criando soluções que
+                transformam ideias em experiências digitais de impacto.
+              </p>
+              <div className="flex mt-4 space-x-3">
+                <Link
+                  href="https://github.com/raulzera99"
+                  target="_blank"
+                  className="text-blue-500 hover:text-blue-700 dark:text-blue-400 flex items-center"
+                >
+                  <GitHubIcon className="mr-1" />
+                  GitHub
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/in/raul-dantas-761175202/"
+                  target="_blank"
+                  className="text-blue-500 hover:text-blue-700 dark:text-blue-400 flex items-center"
+                >
+                  <LinkedInIcon className="mr-1" />
+                  LinkedIn
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Desenvolvedor: João Ribeiro */}
+            <motion.div
+              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105"
+              whileHover={{ translateY: -10 }}
+            >
+              <div className="flex items-center space-x-4">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-blue-500">
+                  <Image
+                    src="/assets/imgs/joao_ribeiro.png"
+                    alt="João Ribeiro"
+                    layout="fill"
+                    objectFit="cover"
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold text-blue-600 dark:text-blue-300">
+                    João Ribeiro
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    Desenvolvedor Full Stack & DevOps
+                  </p>
+                </div>
+              </div>
+              <p className="mt-4 text-gray-700 dark:text-gray-300">
+                Entusiasta de novas tecnologias, João atua desde 2019,
+                combinando desenvolvimento e práticas DevOps para entregar
+                soluções digitais de alta performance.
+              </p>
+              <div className="flex mt-4 space-x-3">
+                <Link
+                  href="https://github.com/Raulens"
+                  target="_blank"
+                  className="text-blue-500 hover:text-blue-700 dark:text-blue-400 flex items-center"
+                >
+                  <GitHubIcon className="mr-1" />
+                  GitHub
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/in/jvrdl/"
+                  target="_blank"
+                  className="text-blue-500 hover:text-blue-700 dark:text-blue-400 flex items-center"
+                >
+                  <LinkedInIcon className="mr-1" />
+                  LinkedIn
+                </Link>
+              </div>
+            </motion.div>
+          </motion.div>
+        </motion.section>
+        {/* Section: Futuras Implementações */}
+        <motion.section
+          className="my-16 p-8 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-gray-700 dark:to-gray-800 rounded-lg shadow-xl"
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+        >
+          <motion.div className="pb-5" variants={fadeInUp}>
+            <h2 className="text-4xl font-bold mb-4 text-center text-gray-900 dark:text-gray-100">
+              Futuras Implementações
+            </h2>
+          </motion.div>
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            variants={fadeInUp}
+          >
+            <div>
+              <h3 className="text-2xl font-semibold mb-2 text-blue-600 dark:text-blue-300">
+                Roteiros Turísticos Personalizados
+              </h3>
+              <p className="text-lg text-gray-700 dark:text-gray-300">
+                Explore Birigui com roteiros personalizados e informações sobre
+                monumentos, cultura e a história por trás de cada lugar.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold mb-2 text-blue-600 dark:text-blue-300">
+                ChatBot Inteligente
+              </h3>
+              <p className="text-lg text-gray-700 dark:text-gray-300">
+                Receba recomendações e tire dúvidas sobre comércios e eventos
+                locais com um assistente virtual sempre disponível.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold mb-2 text-blue-600 dark:text-blue-300">
+                Jornadas Imersivas
+              </h3>
+              <p className="text-lg text-gray-700 dark:text-gray-300">
+                Participe de experiências imersivas que simulam eventos
+                históricos ou a produção de calçados, promovendo um aprendizado
+                divertido e interativo.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold mb-2 text-blue-600 dark:text-blue-300">
+                Plataforma de Comércio Eletrônico
+              </h3>
+              <p className="text-lg text-gray-700 dark:text-gray-300">
+                Adquira produtos locais diretamente de lojas de Birigui, com
+                entrega em todo o Brasil e pagamento seguro.
+              </p>
+            </div>
+          </motion.div>
+        </motion.section>
+        {/* Section: Explore Nossa Galeria */}
+        <motion.section
+          className="my-16 p-8 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-gray-700 dark:to-gray-800 rounded-lg shadow-xl"
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+        >
+          <motion.div className="pb-5" variants={fadeInUp}>
+            <h2 className="text-4xl font-bold mb-4 text-center text-gray-900 dark:text-gray-100">
+              Explore Nossa Galeria
+            </h2>
+            <p className="text-lg text-center text-gray-700 dark:text-gray-300">
+              Veja fotos dos pontos mais bonitos e históricos da cidade de
+              Birigui.
+            </p>
+          </motion.div>
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={fadeInUp}
+          >
+            {[1, 2, 3, 4, 5, 6].map((item) => (
+              <div
+                key={item}
+                className="relative overflow-hidden rounded-lg shadow-lg hover:scale-105 transform transition"
+              >
+                <Image
+                  src={`/assets/imgs/galeria${item}.jpg`}
+                  alt={`Galeria de Birigui ${item}`}
+                  width={400}
+                  height={300}
+                  className="w-full h-full object-cover"
+                />
+                <div
+                  className="absolute
+                              inset-0
+                              bg-black bg-opacity-50
+                              flex items-center justify-center
+                              opacity-0
+                              transition-opacity
+                              duration-300
+                              hover:opacity-100"
+                >
+                  <p className="text-white text-lg font-bold">Foto {item}</p>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </motion.section>
       </main>
     </div>
   );
