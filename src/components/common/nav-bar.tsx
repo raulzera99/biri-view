@@ -125,7 +125,9 @@ export const Navbar: React.FC = () => {
           </Link>
           <Separator orientation="vertical" size="2px" length="24px" />
           <Link href="https://museubirigui.com.br/" passHref target="blank">
-            <span className="text-black dark:text-white px-4">Museu do Calçado</span>
+            <span className="text-black dark:text-white px-4">
+              Museu do Calçado
+            </span>
           </Link>
         </div>
 
@@ -182,14 +184,25 @@ export const Navbar: React.FC = () => {
                   }}
                   className="mt-2 py-5"
                 >
-                  <MenuItem onClick={closeServicesMenuHamburguer}>
-                    <Link href="/services/lojas-de-calcados" passHref>
+                  {/* Links para serviços */}
+                  <MenuItem onClick={closeServicesMenu}>
+                    <Link href="/shop" passHref>
                       <span>Lojas de Calçados</span>
                     </Link>
                   </MenuItem>
-                  <MenuItem onClick={closeServicesMenuHamburguer}>
-                    <Link href="/services/historia-de-birigui" passHref>
+                  <MenuItem onClick={closeServicesMenu}>
+                    <Link href="/historia" passHref>
                       <span>História de Birigui</span>
+                    </Link>
+                  </MenuItem>
+                  <MenuItem onClick={closeServicesMenu}>
+                    <Link href="/comercio" passHref>
+                      <span>Comércio de Birigui</span>
+                    </Link>
+                  </MenuItem>
+                  <MenuItem onClick={closeServicesMenu}>
+                    <Link href="/cultura" passHref>
+                      <span>Cultura de Birigui</span>
                     </Link>
                   </MenuItem>
                 </Menu>

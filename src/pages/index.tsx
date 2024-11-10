@@ -81,14 +81,14 @@ export const automationTechnologies = [
 ];
 
 export default function Home() {
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: "easeOut" },
-    },
-  };
+  // const fadeInUp = {
+  //   hidden: { opacity: 0, y: 20 },
+  //   visible: {
+  //     opacity: 1,
+  //     y: 0,
+  //     transition: { duration: 0.5, ease: "easeOut" },
+  //   },
+  // };
 
   const staggerContainer = {
     hidden: { opacity: 1 },
@@ -140,15 +140,12 @@ export default function Home() {
           animate="visible"
           variants={staggerContainer}
         >
-          <motion.div className="pb-5" variants={fadeInUp}>
+          <motion.div className="pb-5">
             <h2 className="text-4xl font-bold mb-4 text-center">
               Indicação Geográfica de Birigui
             </h2>
           </motion.div>
-          <motion.div
-            className="flex flex-col md:flex-row items-center justify-center"
-            variants={fadeInUp}
-          >
+          <motion.div className="flex flex-col md:flex-row items-center justify-center">
             <Image
               src="/assets/imgs/logo-ig-birigui.png"
               alt="Indicação Geográfica de Birigui"
@@ -247,7 +244,7 @@ export default function Home() {
           animate="visible"
           variants={staggerContainer}
         >
-          <motion.div className="pb-5 text-center" variants={fadeInUp}>
+          <motion.div className="pb-5 text-center">
             <h2 className="text-4xl font-bold mb-4 text-center text-gray-900 dark:text-gray-100">
               Sobre o Projeto
             </h2>
@@ -257,10 +254,7 @@ export default function Home() {
               únicos.
             </p>
           </motion.div>
-          <motion.div
-            className="flex flex-col md:flex-row items-center justify-center"
-            variants={fadeInUp}
-          >
+          <motion.div className="flex flex-col md:flex-row items-center justify-center">
             <Image
               src="/assets/imgs/logo.png"
               alt="BiriView Logo"
@@ -278,10 +272,7 @@ export default function Home() {
               </p>
             </div>
           </motion.div>
-          <motion.div
-            className="mt-8 grid md:grid-cols-2 gap-4 text-center"
-            variants={fadeInUp}
-          >
+          <motion.div className="mt-8 grid md:grid-cols-2 gap-4 text-center">
             <div className="bg-white dark:bg-gray-600 p-6 rounded-lg shadow-lg">
               <h3 className="text-2xl font-bold text-blue-600 dark:text-blue-300">
                 Missão
@@ -309,7 +300,7 @@ export default function Home() {
           animate="visible"
           variants={staggerContainer}
         >
-          <motion.div className="pb-8 text-center" variants={fadeInUp}>
+          <motion.div className="pb-8 text-center">
             <h2 className="text-4xl font-extrabold text-gray-900 dark:text-gray-100 tracking-tight">
               Desenvolvedores
             </h2>
@@ -317,10 +308,7 @@ export default function Home() {
               Conheça os talentos por trás do projeto
             </p>
           </motion.div>
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-12"
-            variants={fadeInUp}
-          >
+          <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Desenvolvedor: Raul Dantas */}
             <motion.div
               className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105"
@@ -427,15 +415,12 @@ export default function Home() {
           animate="visible"
           variants={staggerContainer}
         >
-          <motion.div className="pb-5" variants={fadeInUp}>
+          <motion.div className="pb-5">
             <h2 className="text-4xl font-bold mb-4 text-center text-gray-900 dark:text-gray-100">
               Futuras Implementações
             </h2>
           </motion.div>
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
-            variants={fadeInUp}
-          >
+          <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-2xl font-semibold mb-2 text-blue-600 dark:text-blue-300">
                 Roteiros Turísticos Personalizados
@@ -482,7 +467,7 @@ export default function Home() {
           animate="visible"
           variants={staggerContainer}
         >
-          <motion.div className="pb-5" variants={fadeInUp}>
+          <motion.div className="pb-5">
             <h2 className="text-4xl font-bold mb-4 text-center text-gray-900 dark:text-gray-100">
               Explore Nossa Galeria
             </h2>
@@ -491,10 +476,7 @@ export default function Home() {
               Birigui.
             </p>
           </motion.div>
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={fadeInUp}
-          >
+          <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[1, 2, 3, 4, 5, 6].map((item) => (
               <div
                 key={item}
