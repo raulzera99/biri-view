@@ -312,7 +312,7 @@ export default function Home() {
             {/* Desenvolvedor: Raul Dantas */}
             <motion.div
               className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105"
-              whileHover={{ translateY: -10 }}
+              // whileHover={{ translateY: -10 }}
             >
               <div className="flex items-center space-x-4">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-blue-500">
@@ -361,7 +361,7 @@ export default function Home() {
             {/* Desenvolvedor: João Ribeiro */}
             <motion.div
               className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105"
-              whileHover={{ translateY: -10 }}
+              // whileHover={{ translateY: -10 }}
             >
               <div className="flex items-center space-x-4">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-blue-500">

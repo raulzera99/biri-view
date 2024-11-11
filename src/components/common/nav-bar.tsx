@@ -207,6 +207,24 @@ export const Navbar: React.FC = () => {
                   </MenuItem>
                 </Menu>
               </div>
+              <Link href="/contact" passHref>
+                <span className="text-black dark:text-white px-4 my-4">
+                  Contato
+                </span>
+              </Link>
+              {/* <Separator orientation="horizontal" size="2px" length="24px" /> */}
+              <Link href="/shop" passHref>
+                <span className="text-black dark:text-white px-4 flex items-center my-4">
+                  Loja
+                  <FaShoppingCart size={20} className="ml-2" />
+                </span>
+              </Link>
+              {/* <Separator orientation="horizontal" size="2px" length="24px" /> */}
+              <Link href="https://museubirigui.com.br/" passHref target="blank">
+                <span className="text-black dark:text-white px-4 my-4">
+                  Museu do Calçado
+                </span>
+              </Link>
             </div>
           </PopoverContent>
         </Popover>
