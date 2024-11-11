@@ -121,8 +121,8 @@ export default function Home() {
         <div className="relative z-10 container mx-auto text-center">
           <h1 className="text-5xl font-bold drop-shadow-lg">BiriView</h1>
           <p className="mt-3 text-xl drop-shadow-lg">
-            Explore o comércio e a história da cidade de Birigui de forma
-            interativa.
+            Explore o comércio, a história e a cultura da cidade de Birigui de
+            forma interativa.
           </p>
         </div>
       </motion.header>
@@ -456,6 +456,26 @@ export default function Home() {
               <p className="text-lg text-gray-700 dark:text-gray-300">
                 Adquira produtos locais diretamente de lojas de Birigui, com
                 entrega em todo o Brasil e pagamento seguro.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold mb-2 text-blue-600 dark:text-blue-300">
+                Hub de Eventos, Cursos, Workshops, Jogos e Lives
+              </h3>
+              <p className="text-lg text-gray-700 dark:text-gray-300">
+                Participe de eventos culturais, cursos, workshops, jogos e lives
+                que promovem a cultura e a economia local.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold mb-2 text-blue-600 dark:text-blue-300">
+                Inteligência Artificial Generativa para Criação de Conteúdo
+              </h3>
+              <p className="text-lg text-gray-700 dark:text-gray-300">
+                Crie conteúdos exclusivos e personalizados com a ajuda de
+                algoritmos de inteligência artificial generativa. Desde posts
+                para redes sociais, vídeos, até auxílio na criação e estilização
+                de calçados.
               </p>
             </div>
           </motion.div>

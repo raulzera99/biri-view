@@ -49,9 +49,9 @@ export default function Historia() {
                 <div className="flex items-center justify-center bg-blue-500 text-white rounded-full h-12 w-12 font-bold text-lg relative z-10">
                   {event.year}
                 </div>
-                {event.year !== "2000" && (
+                {/* {event.year !== "2000" && (
                   <div className="w-1 bg-blue-500 h-28 absolute left-6 top-6 z-0"></div>
-                )}
+                )} */}
                 <div className="ml-12">
                   <h3 className="text-2xl font-semibold mb-2">{event.title}</h3>
                   <p className="text-base md:text-lg text-gray-700 dark:text-gray-300">
