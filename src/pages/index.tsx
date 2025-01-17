@@ -105,6 +105,10 @@ export default function Home() {
     visible: { scale: 1, opacity: 1, transition: { duration: 2 } },
   };
 
+  const [modelUrl, setModelUrl] = React.useState(
+    "https://rte-web-viewer.substance3d.com/model/https%3A%2F%2Fcdn.substance3d.com%2Fv2%2Ffiles%2Fsource%2F1ec31534-0574-4a25-b011-fc244e6a4363%3Fencrypted%3Dtrue"
+  );
+
   return (
     <div className="min-h-screen bg-light-background dark:bg-dark-background text-light-primary-900 dark:text-dark-primary-100">
       {/* Header */}
@@ -308,7 +312,7 @@ export default function Home() {
               Conheça os talentos por trás do projeto
             </p>
           </motion.div>
-          <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {/* Desenvolvedor: Raul Dantas */}
             <motion.div
               className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105"
@@ -329,7 +333,7 @@ export default function Home() {
                     Raul Dantas
                   </h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Desenvolvedor Full Stack
+                    Desenvolvedor Full Stack & Especialista em IA
                   </p>
                 </div>
               </div>
@@ -349,6 +353,54 @@ export default function Home() {
                 </Link>
                 <Link
                   href="https://www.linkedin.com/in/raul-dantas-761175202/"
+                  target="_blank"
+                  className="text-blue-500 hover:text-blue-700 dark:text-blue-400 flex items-center"
+                >
+                  <LinkedInIcon className="mr-1" />
+                  LinkedIn
+                </Link>
+              </div>
+            </motion.div>
+            {/* Desenvolvedor: Diogo Alcarde */}
+            <motion.div
+              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105"
+              // whileHover={{ translateY: -10 }}
+            >
+              <div className="flex items-center space-x-4">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-blue-500">
+                  <Image
+                  src="/assets/imgs/diogo_alcarde.png"
+                  alt="Diogo Alcarde"
+                  // width={64}
+                  // height={64}
+                    layout="fill"
+                  objectFit="cover"
+                  className="object-cover rounded-full"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold text-blue-600 dark:text-blue-300">
+                    Diogo Alcarde
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    Desenvolvedor Full Stack & Especialista em IPA
+                  </p>
+                </div>
+              </div>
+              <p className="mt-4 text-gray-700 dark:text-gray-300">
+              Sua abordagem combina habilidades técnicas e estratégicas, o que permite liderar projetos desafiadores e buscar inovações contínuas para solucionar problemas complexos.
+              </p>
+              <div className="flex mt-4 space-x-3">
+                <Link
+                  href="https://github.com/Alcarde1704"
+                  target="_blank"
+                  className="text-blue-500 hover:text-blue-700 dark:text-blue-400 flex items-center"
+                >
+                  <GitHubIcon className="mr-1" />
+                  GitHub
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/in/diogo-lima-alcarde/"
                   target="_blank"
                   className="text-blue-500 hover:text-blue-700 dark:text-blue-400 flex items-center"
                 >
@@ -408,6 +460,58 @@ export default function Home() {
             </motion.div>
           </motion.div>
         </motion.section>
+
+        {/* Section: Modelo 3D Interativo */}
+        <motion.section
+          className="my-16 p-8 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-gray-700 dark:to-gray-800 rounded-lg shadow-xl"
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+        >
+          <motion.div className="pb-5">
+            <h2 className="text-4xl font-bold mb-4 text-center text-gray-900 dark:text-gray-100">
+              Modelo 3D Interativo
+            </h2>
+            <p className="text-lg text-center text-gray-700 dark:text-gray-300">
+              Explore um modelo 3D interativo de um calçado.
+            </p>
+          </motion.div>
+          <motion.div className="flex justify-center mb-4">
+            <select
+              className="p-2 rounded-lg shadow-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+              onChange={(e) => setModelUrl(e.target.value)}
+            >
+              <option value="https://rte-web-viewer.substance3d.com/model/https%3A%2F%2Fcdn.substance3d.com%2Fv2%2Ffiles%2Fsource%2F1ec31534-0574-4a25-b011-fc244e6a4363%3Fencrypted%3Dtrue">
+                Salto alto
+              </option>
+              <option value="https://rte-web-viewer.substance3d.com/model/https%3A%2F%2Fcdn.substance3d.com%2Fv2%2Ffiles%2Fsource%2Fda0392fe-6372-48f3-982c-763b1ad7cc26%3Fencrypted%3Dtrue">
+                Sapatênis
+              </option>
+              <option value="https://rte-web-viewer.substance3d.com/model/https%3A%2F%2Fcdn.substance3d.com%2Fv2%2Ffiles%2Fsource%2F51375b4d-75cb-426a-b7c5-0882739f8bd7%3Fencrypted%3Dtrue">
+                Tênis
+              </option>
+              <option value="https://rte-web-viewer.substance3d.com/model/https%3A%2F%2Fcdn.substance3d.com%2Fv2%2Ffiles%2Fsource%2Fbf671bcb-2cf6-4b5f-8300-259220025848%3Fencrypted%3Dtrue">
+                Botina
+              </option>
+              {/* <option value="https://rte-web-viewer.substance3d.com/model/https%3A%2F%2Fcdn.substance3d.com%2Fv2%2Ffiles%2Fsource%2F51375b4d-75cb-426a-b7c5-0882739f8bd7%3Fencrypted%3Dtrue">
+                Textura
+              </option> 
+              https://substance3d.adobe.com/assets/collections/75de54fe9647dd2f34bcb05ed3b468a6e800a751/asset/6b7521932055859fe0e7f39a7c7e316ddb7c0f9e
+              */}
+            </select>
+          </motion.div>
+            <motion.div className="flex justify-center">
+            <iframe
+              src={modelUrl}
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              allow="fullscreen"
+              className="w-full max-w-4xl h-96 md:h-[560px] rounded-lg shadow-lg"
+            ></iframe>
+            </motion.div>
+        </motion.section>
+
         {/* Section: Futuras Implementações */}
         <motion.section
           className="my-16 p-8 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-gray-700 dark:to-gray-800 rounded-lg shadow-xl"
